@@ -20,6 +20,10 @@ fi
 
 SCR_DIR=$(cd `dirname $0` && pwd)
 
+docker ps -a
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
 rm -fr ${SCR_DIR}/code
 rm -fr ${SCR_DIR}/env
 rm -fr ${SCR_DIR}/data
