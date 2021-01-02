@@ -169,7 +169,7 @@ module.exports = {
             const me = this;
             me.module = 'addTask'; 
             setTimeout(function() {
-                me.$refs.scheduleTaskForm.form.command = (!v) ? '' : ('node ' + v);
+                me.$refs.scheduleTaskForm.form.command = (!v) ? '' : ('python ' + v);
                 me.$refs.scheduleTaskForm.form.type = (!v) ? '' : 'C'; 
             }, 100);
         },
@@ -223,14 +223,10 @@ module.exports = {
             data.cmd = "askBackendStatus"
             me.root.dataEngine(me).doPost(data, function(result) {
                 me.localScripts =  result.localScripts.filter(function(item) {
-                   return  (/\.js$/.test(item.name)) ? true : false
+                   return  (/\.py$/.test(item.name)) ? true : false
                 });
                 me.scheduledTasks =  result.scheduledTasks;
                 me.cronTasks =  result.scheduledTasks;
-                /*
-                me.cronTasks =  result.scheduledTasks.filter(function(item) {
-                   return  (/^xp\_/.test(item.name)) ? true : false
-                });*/
                 me.logs =  result.logs;
                 me.outputs =  result.outputs;
             });
