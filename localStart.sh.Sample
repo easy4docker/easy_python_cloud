@@ -35,7 +35,7 @@ docker container rm backendcloud-local-container_eng
 
 docker run -d --restart=on-failure -v "${SCR_DIR}/code/mainServer":/var/_localApp -v "${SCR_DIR}/data":/var/_localAppData  \
 --network network_easydocker --name backendcloud-local-container  backendcloud-local-image 
-docker run -d --restart=on-failure -e ROOT_HOST="${MAIN_IP}" -e MAIN_PORT=""  -e ROOT_PASSWORD=FqId5mSyCpvhmP08eoyn4VaVfJZUc7uY  -p ${ADMIN_PORT}:80 \
+docker run -d --restart=on-failure -e ROOT_HOST="${MAIN_IP}" -e MAIN_PORT=""  -p ${ADMIN_PORT}:80 \
 -v "${SCR_DIR}/code":/var/_localApp -v "${SCR_DIR}/data":/var/_localAppData -v "${SCR_DIR}/env":/var/_localAppEnv --network network_easydocker \
 --name backendcloud-local-container_eng  backendcloud-local-image_eng
 
