@@ -175,6 +175,7 @@ module.exports = {
             outputs         : [],
             module          : '',
             expand          : {
+                appDocs         : true,
                 localScripts    : false,
                 logs            : false,
                 cronTasks       : false,
@@ -196,6 +197,9 @@ module.exports = {
         )
     },
     methods :{
+        selectDoc(doc) {
+            this.appDoc = doc;
+        },
         triggerFrom(v) {
             const me = this;
             me.module = 'addTask'; 
