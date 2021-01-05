@@ -37,7 +37,7 @@ module.exports = {
  
 <style>
     .header-bg { 
-    background: url("/images/mysql_cloud_banner.png"); 
+    background: url("/images/backend_cloud_banner.png"); 
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-position: center;
