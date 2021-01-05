@@ -37,7 +37,7 @@ module.exports = {
  
 <style>
     .header-bg { 
-    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5)),  url("/images/backend-cloud-header.png"); 
+    background: url("/images/mysql_cloud_banner.png"); 
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-position: center;
