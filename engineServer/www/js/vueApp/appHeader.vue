@@ -48,10 +48,10 @@ module.exports = {
     -webkit-text-stroke: 1px black;
     color: white;
     text-shadow:
-    3px 3px 0 #000,
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    3px 3px 0 #FF0000,
+    -1px -1px 0 #FF0000,  
+    1px -1px 0 #FF0000,
+    -1px 1px 0 #FF0000,
+    1px 1px 0 #FF0000;
     }
 </style>
