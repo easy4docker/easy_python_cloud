@@ -1,6 +1,6 @@
 <template>
     <span>
-        <h1>Easy Mysql Cloud</h1>
+        <h1>Easy Python Backend Cloud</h1>
         <p>How to setup local environment:</p>
         <p>Step 1: create your local work directory</p>
         <pre><code>mkdir workdir
