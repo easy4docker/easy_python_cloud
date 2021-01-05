@@ -2,6 +2,30 @@
         <div class="container-fluid m-0 text-left">
             <div class="row">
                 <div class="col-3 p-1">
+
+                    <div class="card p-1 mb-1 alert-secondary" >
+                        <div class="form-control card p-2 text-center alert-dark">
+                            <div class="container-fluid m-0 text-center">
+                                <div class="row">
+                                    <div class="col-11 p-0">
+                                        API Documents
+                                    </div>
+                                    <div class="col-1 p-0">
+                                        <a href="JavaScript:void(0)" v-on:click="toggle('appDocs')">
+                                            <i v-if="expand.appDocs" class="fa fa-minus"></i>
+                                            <i v-if="!expand.appDocs" class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="expand.appDocs" class="text-left p-1 pl-2 list_file_section">
+                            <div v-for="item in appDocs">
+                                <a href="JavaScript:void(0)" v-on:click="selectDoc(item)">{{item.caption}}</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card p-1 mb-1 alert-secondary" >
                         <div class="form-control card p-2 text-center alert-dark">
                             <div class="container-fluid m-0 text-center">
@@ -113,7 +137,7 @@
 
                 </div>
                 <div class="col-9 p-1">
-                    <div class="card main_list_file_section p-1 alert-secondary" >
+                    <div v-if="!appDoc" class="card main_list_file_section p-1 alert-secondary" >
                         <app-menu></app-menu>
                         <span v-if="module=='addTask'">
                             <schedule-task-form ref="scheduleTaskForm"></schedule-task-form>
@@ -132,6 +156,8 @@
                         </div>
 
                     </div>
+
+                    <app-doc-frame v-if="appDoc" v-bind:appdoc="appDoc"></app-doc-frame>
                 </div>
             </div>
         </div> 
@@ -153,7 +179,12 @@ module.exports = {
                 logs            : false,
                 cronTasks       : false,
                 outputs         : false
-            }
+            },
+            appDocs : [
+                {code: 'howToSetup', caption: 'How To Setup'}, 
+                {code: 'howToAPI', caption: 'How To Make API request'}
+            ],
+            appDoc  : false
         }
     },
     mounted () {
@@ -245,7 +276,8 @@ module.exports = {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue',
             'appMenu' : '/js/vueApp/appMenu.vue',
             'showFileContent' : '/js/vueApp/showFileContent.vue',
-            'showOutput' : '/js/vueApp/showOutput.vue'
+            'showOutput' : '/js/vueApp/showOutput.vue',
+            'appDocFrame'     : '/js/vueApp/appDocs/appDocFrame.vue'
         }
     })
 }
